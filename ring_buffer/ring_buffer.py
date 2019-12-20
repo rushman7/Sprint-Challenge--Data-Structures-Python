@@ -9,9 +9,9 @@ class RingBuffer:
 
     def append(self, item):
         if self.capacity == self.storage.length: # check if capacity is reached
-            self.current.value = item
-            if self.current is self.storage.tail: # if value is the oldest then move to front
-                self.current = self.storage.head
+            self.current.value = item # assign new value to be the current
+            if self.current is self.storage.tail: # if current is tail(end)
+                self.current = self.storage.head # current becomes start head
             else:
                 self.current = self.current.next # move to next
         else:
