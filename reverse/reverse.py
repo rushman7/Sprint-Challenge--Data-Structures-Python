@@ -46,7 +46,7 @@ class LinkedList:
     if self.head is None: 
       return
 
-    current_node = self.head
-    while current_node.get_next():
-      self.add_to_head(current_node.get_next().value)
-      current_node = current_node.get_next()
+    node = self.head
+    while node.next_node:
+      self.add_to_head(node.next_node.value)
+      node = node.next_node
